@@ -7,7 +7,7 @@
 
 (defn on-error [request _response]
   {:status 403
-   :headers {}
+   :headers {"Content-Type" "text/plain"}
    :body (str "Access to " (:uri request) " is not authorized")})
 
 (defn wrap-restricted [handler]
